@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskpython
+  name: flaskpython
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flaskpython
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flaskpython
+    spec:
+      containers:
+      - image: tonykien2012/flaskpython:latest
+        name: flaskpython
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-service-flaskpython
+  labels:
+    app: lb-service-flaskpython
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: flaskpython
