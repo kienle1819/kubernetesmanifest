@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: app-demo1
-        image: tonykien2012/cicd-demoapp:python-app-1.0
+        image: tonykien2012/app-demo1:latest
         imagePullPolicy: Always #IfNotPresent
         resources:
           #requests:
