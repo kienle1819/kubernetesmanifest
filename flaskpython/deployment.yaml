@@ -18,7 +18,7 @@ spec:
         app: flaskpython
     spec:
       containers:
-      - image: tonykien2012/flaskpython:24
+      - image: tonykien2012/flaskpython:25
         name: flaskpython
         resources: {}
 status: {}
